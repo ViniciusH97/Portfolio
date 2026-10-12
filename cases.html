@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cases acadêmicos e laboratórios controlados de Vinicius Lima em Pentest Web, segurança de APIs, Linux e redes.">
+  <title>Cases de segurança — Vinicius Lima</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="casebook-page cases-page">
+  <div class="casebook-shell">
+    <header class="casebook-header">
+      <a class="casebook-brand" href="index.html#top" aria-label="Voltar ao início"><span>&gt;_</span> VINICIUS<span class="blue">LIMA</span><small>.SEC</small></a>
+      <nav class="casebook-nav" aria-label="Navegação principal">
+        <a href="index.html#cases">Início</a>
+        <a href="#case-crapi">Cases</a>
+        <a href="index.html#sobre">Sobre</a>
+        <a class="casebook-cta" href="index.html#contato">Contato ↗</a>
+      </nav>
+      <a class="casebook-language" href="cases-en.html" lang="en">EN ↗</a>
+    </header>
+
+    <main class="cases-main">
+      <section class="cases-intro">
+        <p class="casebook-kicker"><i></i> PORTFÓLIO TÉCNICO</p>
+        <p class="casebook-role">CASES ACADÊMICOS · LABORATÓRIOS CONTROLADOS · DOCUMENTAÇÃO</p>
+        <h1>Prática de segurança<br><span>com contexto e evidências.</span></h1>
+        <p>Uma seleção de projetos em que pratico reconhecimento, validação de vulnerabilidades, análise de impacto e documentação. Os testes foram realizados em ambientes de treinamento, acadêmicos ou autorizados.</p>
+        <a class="casebook-button report-link" href="report-example.html">Ver exemplo de relatório sanitizado ↗</a>
+      </section>
+
+      <section class="case-report" id="case-crapi">
+        <div class="case-report-index">01 <span>API SECURITY · PROJETO ACADÊMICO</span></div>
+        <div class="case-report-content">
+          <h2>Análise de vulnerabilidades na API crAPI</h2>
+          <p class="case-report-lead">Trabalho de conclusão de curso sobre pentesting em APIs RESTful, baseado no OWASP e em uma aplicação deliberadamente vulnerável para treinamento.</p>
+          <div class="case-report-grid">
+            <div><b>Contexto</b><p>Aplicação de treinamento usada para estudar riscos específicos de APIs e controles de acesso.</p></div>
+            <div><b>Prática</b><p>Reconhecimento, análise de endpoints, validação controlada de hipóteses e documentação de evidências.</p></div>
+            <div><b>Referências</b><p>OWASP API Security, autenticação, autorização, exposição de dados e validação de entradas.</p></div>
+            <div><b>Aprendizado</b><p>Conectar uma falha técnica ao impacto observável e a uma recomendação de correção.</p></div>
+          </div>
+          <a class="casebook-button primary" href="https://github.com/ViniciusH97/Analise-Vulnerabilidades-API-crAPI" target="_blank" rel="noopener noreferrer">Abrir repositório ↗</a>
+        </div>
+      </section>
+
+      <section class="case-report">
+        <div class="case-report-index">02 <span>VULNERABILITY ASSESSMENT · LABORATÓRIO</span></div>
+        <div class="case-report-content">
+          <h2>Análise da máquina Metasploitable 2</h2>
+          <p class="case-report-lead">Estudo em ambiente controlado com Kali Linux para entender serviços expostos, vulnerabilidades conhecidas e caminhos de exploração.</p>
+          <div class="case-report-grid">
+            <div><b>Objetivo</b><p>Mapear a superfície de ataque de uma máquina vulnerável e organizar os achados.</p></div>
+            <div><b>Prática</b><p>Enumeração de serviços, análise de exposição, exploração em laboratório e registro técnico.</p></div>
+            <div><b>Ferramentas</b><p>Nmap, Kali Linux e recursos de apoio para investigação em ambiente isolado.</p></div>
+            <div><b>Aprendizado</b><p>Relacionar serviço identificado, vulnerabilidade, impacto e recomendação de mitigação.</p></div>
+          </div>
+          <a class="casebook-button primary" href="https://github.com/ViniciusH97/Analise-de-vulnerabilidades-Metasploitable2" target="_blank" rel="noopener noreferrer">Abrir repositório ↗</a>
+        </div>
+      </section>
+
+      <section class="case-report">
+        <div class="case-report-index">03 <span>WARGAMES · LINUX</span></div>
+        <div class="case-report-content">
+          <h2>OverTheWire: soluções e aprendizados</h2>
+          <p class="case-report-lead">Documentação de desafios que reforçam fundamentos de Linux, redes, enumeração, análise de serviços e raciocínio ofensivo.</p>
+          <div class="case-report-grid">
+            <div><b>Objetivo</b><p>Praticar resolução de problemas e consolidar fundamentos usados em investigações.</p></div>
+            <div><b>Prática</b><p>Registrar comandos, hipóteses, descobertas e o caminho de resolução de forma reproduzível.</p></div>
+            <div><b>Competências</b><p>Shell, permissões, processos, protocolos, análise de arquivos e troubleshooting.</p></div>
+            <div><b>Aprendizado</b><p>Comunicar o processo de investigação, não apenas o resultado final.</p></div>
+          </div>
+          <a class="casebook-button primary" href="https://github.com/ViniciusH97/OverTheWire" target="_blank" rel="noopener noreferrer">Abrir repositório ↗</a>
+        </div>
+      </section>
+
+      <section class="case-report">
+        <div class="case-report-index">04 <span>WIRELESS · TERMUX · ANÁLISE PASSIVA</span></div>
+        <div class="case-report-content">
+          <h2>Mapeamento passivo de redes Wi-Fi</h2>
+          <p class="case-report-lead">Documentação de análise passiva usando Termux e Termux API, com foco em coleta responsável e organização de informações.</p>
+          <div class="case-report-grid">
+            <div><b>Objetivo</b><p>Observar informações disponíveis no ambiente sem interferência ativa na rede.</p></div>
+            <div><b>Prática</b><p>Coleta passiva, organização dos dados e registro das limitações do procedimento.</p></div>
+            <div><b>Ambiente</b><p>Dispositivo Android com Termux e Termux API em contexto controlado.</p></div>
+            <div><b>Aprendizado</b><p>Aplicar ferramentas de redes com responsabilidade, escopo e clareza documental.</p></div>
+          </div>
+          <a class="casebook-button primary" href="https://github.com/ViniciusH97/Wi-fi-passive-mapping-termux" target="_blank" rel="noopener noreferrer">Abrir repositório ↗</a>
+        </div>
+      </section>
+    </main>
+    <footer class="casebook-footer"><span>VINICIUS<span class="blue">LIMA</span>.SEC</span><span>Testes somente mediante autorização · Ambientes acadêmicos e controlados.</span></footer>
+  </div>
+</body>
+</html>

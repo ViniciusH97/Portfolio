@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Exemplo sanitizado de relatório de segurança produzido por Vinicius Lima.">
+  <title>Exemplo de relatório — Vinicius Lima</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="casebook-page report-page">
+  <div class="casebook-shell">
+    <header class="casebook-header">
+      <a class="casebook-brand" href="index.html#top" aria-label="Voltar ao início"><span>&gt;_</span> VINICIUS<span class="blue">LIMA</span><small>.SEC</small></a>
+      <nav class="casebook-nav" aria-label="Navegação principal">
+        <a href="cases.html">Cases</a><a href="#findings">Achados</a><a href="#method">Método</a><a class="casebook-cta" href="index.html#contato">Contato ↗</a>
+      </nav>
+      <a class="casebook-language" href="report-example-en.html" lang="en">EN ↗</a>
+    </header>
+
+    <main class="report-main">
+      <div class="report-notice"><span>RELATÓRIO SANITIZADO</span><b>EXEMPLO DE PORTFÓLIO · SEM DADOS DO CLIENTE</b></div>
+      <section class="report-cover">
+        <p class="casebook-kicker"><i></i> SECURITY ASSESSMENT REPORT</p>
+        <p class="casebook-role">WEB APPLICATION · GRAY-BOX · HOMOLOGAÇÃO</p>
+        <h1>Avaliação de segurança<br><span>de aplicação financeira.</span></h1>
+        <p>Exemplo resumido e anonimizado de como organizo escopo, achados, impacto e recomendações em um relatório técnico. Nomes, datas, identificadores, rotas e evidências originais foram removidos ou generalizados.</p>
+        <div class="report-meta">
+          <div><b>ALVO</b><span>Aplicação financeira (identificada de forma genérica)</span></div>
+          <div><b>AMBIENTE</b><span>Homologação</span></div>
+          <div><b>TIPO</b><span>Gray-box</span></div>
+          <div><b>REFERENCIAL</b><span>OWASP WSTG</span></div>
+        </div>
+      </section>
+
+      <section class="report-summary">
+        <div><p class="eyebrow"><span>//</span> RESUMO EXECUTIVO</p><h2>Achados priorizados<br><span>para orientar decisões.</span></h2></div>
+        <div><p>Em uma avaliação de aplicação financeira em ambiente de homologação, foram registrados cinco achados: um de alta severidade, um de média severidade e três informativos.</p><p>O principal risco demonstrativo foi uma falha de autorização entre contextos de usuário, que poderia permitir acesso indevido a recursos de terceiros. Também foi observada uma janela de exposição relacionada à permanência de tokens após logout. Os demais itens contribuíam para reconhecimento da aplicação, consistência da interface e robustez no tratamento de entradas.</p></div>
+      </section>
+
+      <section class="severity-overview">
+        <div><span class="severity-high"></span><b>01</b><small>Alta</small><strong>Falha de autorização</strong></div>
+        <div><span class="severity-medium"></span><b>01</b><small>Média</small><strong>Gestão de sessão</strong></div>
+        <div><span class="severity-info"></span><b>03</b><small>Informativos</small><strong>Exposição e robustez</strong></div>
+      </section>
+
+      <section class="report-section" id="findings">
+        <div class="report-section-heading"><p class="eyebrow"><span>//</span> ACHADOS</p><h2>Resumo técnico</h2><p>Os exemplos abaixo foram reescritos para demonstrar a estrutura de comunicação sem revelar informações do ambiente avaliado.</p></div>
+        <div class="finding-table">
+          <div class="finding-row finding-header"><span>ID</span><span>DESCRIÇÃO</span><span>SEVERIDADE</span></div>
+          <a class="finding-row" href="#f04"><span>F-04</span><strong>Falha de autorização entre contextos de usuário</strong><em class="high-label">ALTA</em></a>
+          <a class="finding-row" href="#f02"><span>F-02</span><strong>Tokens de sessão não invalidados imediatamente após logout</strong><em class="medium-label">MÉDIA</em></a>
+          <a class="finding-row" href="#f01"><span>F-01</span><strong>Interfaces acessíveis antes da autenticação</strong><em>INFORMATIVO</em></a>
+          <a class="finding-row" href="#f03"><span>F-03</span><strong>Inconsistência de conversão no front-end</strong><em>INFORMATIVO</em></a>
+          <a class="finding-row" href="#f05"><span>F-05</span><strong>Tratamento insuficiente de entradas malformadas</strong><em>INFORMATIVO</em></a>
+        </div>
+      </section>
+
+      <section class="report-section" id="method">
+        <div class="report-section-heading"><p class="eyebrow"><span>//</span> ESCOPO E MÉTODO</p><h2>Validação controlada.</h2></div>
+        <div class="report-method-grid">
+          <div><b>Objetivo</b><p>Validar controles de autenticação, autorização, sessão e tratamento de entradas após a implementação de mitigações.</p></div>
+          <div><b>Ferramentas</b><p>Burp Suite, DevTools do navegador, ferramenta de inspeção de tokens, fuzzing controlado e enumeração autorizada.</p></div>
+          <div><b>Limites</b><p>Ambiente de homologação, sem acesso a dados produtivos, sem persistência de alterações e com evidências redigidas.</p></div>
+          <div><b>Critério</b><p>Reprodução segura, análise de impacto, registro da evidência mínima necessária e recomendação de correção.</p></div>
+        </div>
+      </section>
+
+      <section class="report-section finding-detail" id="f04">
+        <div class="finding-detail-top"><span>F-04 · ALTA</span><span>CONTROLE DE ACESSO</span></div>
+        <h2>Falha de autorização entre contextos de usuário</h2>
+        <p class="finding-lead">Foi observada uma validação insuficiente de vínculo entre o usuário autenticado e um identificador de carteira/recurso recebido pela aplicação.</p>
+        <div class="finding-columns"><div><b>Impacto</b><p>Em um cenário de exploração, um usuário autenticado poderia tentar acessar recursos associados a outro contexto, comprometendo a confidencialidade e a integridade das operações permitidas.</p></div><div><b>Recomendação</b><p>Validar no servidor, a cada requisição, a relação entre identidade autenticada, recurso solicitado e autorização contextual. Não confiar em identificadores enviados pelo cliente.</p></div></div>
+        <div class="redacted-evidence"><span>EVIDÊNCIA REDIGIDA</span><code>POST /api/[recurso-redigido]<br>Authorization: Bearer [token-redigido]<br>{ "resource_id": "[identificador-redigido]" }</code></div>
+      </section>
+
+      <section class="report-section finding-detail" id="f02">
+        <div class="finding-detail-top"><span>F-02 · MÉDIA</span><span>GESTÃO DE SESSÃO</span></div>
+        <h2>Tokens de sessão permanecem válidos após logout</h2>
+        <p class="finding-lead">Após o encerramento da sessão, um token previamente emitido continuou aceito durante sua janela de validade configurada.</p>
+        <div class="finding-columns"><div><b>Impacto</b><p>Se uma sessão for comprometida antes do logout, o agente pode manter acesso aos recursos autorizados até a expiração ou revogação efetiva do token.</p></div><div><b>Recomendação</b><p>Adotar revogação ou rotação de tokens, invalidar refresh tokens no logout e avaliar TTLs adequados ao risco das operações.</p></div></div>
+        <div class="redacted-evidence"><span>EVIDÊNCIA REDIGIDA</span><code>1. Autenticar em ambiente de teste<br>2. Encerrar a sessão<br>3. Repetir requisição autorizada com [token-redigido]<br>Resultado: comportamento observado documentado sem dados reais</code></div>
+      </section>
+
+      <section class="report-section finding-detail minor-findings">
+        <div class="finding-detail-top"><span>F-01 · F-03 · F-05</span><span>INFORMATIVOS</span></div>
+        <h2>Observações complementares</h2>
+        <div class="minor-grid">
+          <div><b>F-01</b><h3>Interfaces antes da autenticação</h3><p>As telas podiam ser renderizadas antes do login, embora os serviços de back-end mantivessem controles de acesso. Recomenda-se restringir a renderização e manter a proteção no servidor.</p></div>
+          <div><b>F-03</b><h3>Inconsistência no front-end</h3><p>Foi observada uma falha de conversão/exibição em uma área da interface. Recomenda-se tratamento consistente de tipos e testes para respostas inesperadas.</p></div>
+          <div><b>F-05</b><h3>Entradas malformadas</h3><p>Parâmetros inválidos provocavam resposta de erro não tratada. Recomenda-se validação de entrada, respostas controladas e ausência de detalhes internos.</p></div>
+        </div>
+      </section>
+
+      <section class="report-conclusion">
+        <p class="eyebrow"><span>//</span> CONCLUSÃO</p>
+        <h2>Relatório que conecta<br><span>falha, impacto e ação.</span></h2>
+        <p>Este exemplo demonstra minha preocupação em separar evidência técnica de interpretação de risco, priorizar achados e comunicar recomendações de forma útil para desenvolvimento, produto e segurança.</p>
+        <a class="casebook-button primary" href="cases.html">Voltar aos cases ↗</a>
+      </section>
+    </main>
+    <footer class="casebook-footer"><span>VINICIUS<span class="blue">LIMA</span>.SEC</span><span>Exemplo sanitizado · Nenhuma informação sensível é exibida.</span></footer>
+  </div>
+</body>
+</html>
